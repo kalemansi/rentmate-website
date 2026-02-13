@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Notifications</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; margin: 0;
+	padding: 0;
+	background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('background.jpg');
+	/* Path to your image */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	filter: brightness(1.2);
+	/* Increase brightness to make it lighter */
+	height: 100vh;}
+        .container { max-width: 400px; margin-top: 200px; margin-left: 550px;padding: 20px; border: 1px solid #ddd; border-radius: 10px; background: #f9f9f9; text-align: center; }
+        .alert-success { background-color: #4CAF50; color: white; padding: 10px; margin-top: 50px; }
+        .alert-danger { background-color: #f44336; color: white; padding: 10px; margin-top: 10px; }
+        .alert-warning { background-color: #ff9800; color: white; padding: 10px; margin-top: 10px; }
+        .alert-info { background-color: #2196F3; color: white; padding: 10px; margin-top: 10px; }
+        .btn { background: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; }
+        .btn:hover { background: #0056b3; }
+    </style>
+    <script>
+        function fetchNotification() {
+            var id = document.getElementById("id").value;
+            if (id === "") {
+                document.getElementById("notificationResult").innerHTML = "<p class='alert-warning'>Please enter an ID</p>";
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "NotificationServlet", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    document.getElementById("notificationResult").innerHTML = xhr.responseText;
+                } else {
+                    document.getElementById("notificationResult").innerHTML = "<p class='alert-danger'>Error fetching data</p>";
+                }
+            };
+
+            xhr.send("id=" + id);
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Check Payment Status</h2>
+    <input type="text" id="id" placeholder="Enter ID">
+    <button class="btn" onclick="fetchNotification()">Check Status</button>
+    <div id="notificationResult"></div>
+</div>
+
+</body>
+</html>

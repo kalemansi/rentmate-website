@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Renter Information Form</title>
+	<!-- Link to Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom CSS -->
+	<style>
+		/* Full-page background with image */
+		body {
+			background-image: url('background.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			margin: 0;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Form covers the entire page with a semi-transparent background */
+		.full-page-form {
+			width: 100%;
+			max-width: 900px;
+			/*background: rgba(255, 255, 255, 0.5); /* Light transparency */
+			padding: 30px;
+			border-radius: 10px;
+			/*box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(8px); /* Blur effect to blend with background */
+		}
+	</style>
+</head>
+
+<body>
+	<form action='rentersdetails' method='post' class="full-page-form">
+		<h2 class="mb-4 text-center">Renter Information</h2>
+		
+		<div class="row">
+			<!-- Full Name -->
+			<div class="col-md-6 mb-3">
+				<label for="name" class="form-label">Name</label>
+				<input type="text" class="form-control" name="fullName" id="name" placeholder="Enter your full name" required>
+			</div>
+
+			<!-- Date of Birth -->
+			<div class="col-md-6 mb-3">
+				<label for="dob" class="form-label">Date of Birth</label>
+				<input type="date" class="form-control" name="dob" id="dob" required>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Contact Number -->
+			<div class="col-md-6 mb-3">
+				<label for="contactNumber" class="form-label">Contact Number</label>
+				<input type="tel" class="form-control" name="contactNumber" id="contactNumber" placeholder="Enter contact number" required>
+			</div>
+
+			<!-- Email Address -->
+			<div class="col-md-6 mb-3">
+				<label for="email" class="form-label">Email Address</label>
+				<input type="email" class="form-control" name="email" id="email" placeholder="Enter email address" required>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- National ID -->
+			<div class="col-md-6 mb-3">
+				<label for="nationalId" class="form-label">National ID</label>
+				<input type="text" class="form-control" name="nationalId" id="nationalId" placeholder="Enter national ID" required>
+			</div>
+
+			<!-- Employment Status -->
+			<div class="col-md-6 mb-3">
+				<label for="employmentStatus" class="form-label">Employment Status</label>
+				<select class="form-select" id="employmentStatus" name="employmentStatus" required>
+					<option value="" disabled selected>Select employment status</option>
+					<option value="employed">Employed</option>
+					<option value="self-employed">Self-employed</option>
+					<option value="unemployed">Unemployed</option>
+					<option value="student">Student</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Employer Name/School Name -->
+			<div class="col-md-6 mb-3">
+				<label for="employerName" class="form-label">Employer/School Name</label>
+				<input type="text" name="employerName" class="form-control" id="employerName" placeholder="Enter employer or school name" required>
+			</div>
+
+			<!-- Monthly Income -->
+			<div class="col-md-6 mb-3">
+				<label for="monthlyIncome" class="form-label">Monthly Income</label>
+				<input type="number" class="form-control" name="monthlyIncome" id="monthlyIncome" placeholder="Enter monthly income" required>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Previous Rental History -->
+			<div class="col-md-12 mb-3">
+				<label for="rentalHistory" class="form-label">Previous Rental History</label>
+				<textarea class="form-control" name="rentalHistory" id="rentalHistory" rows="4" placeholder="Provide details about previous rental history" required></textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Emergency Contact Name -->
+			<div class="col-md-6 mb-3">
+				<label for="emergencyContactName" class="form-label">Emergency Contact Name</label>
+				<input type="text" class="form-control" name="emergencyContactName" id="emergencyContactName" placeholder="Enter emergency contact name" required>
+			</div>
+
+			<!-- Emergency Contact Number -->
+			<div class="col-md-6 mb-3">
+				<label for="emergencyContactNumber" class="form-label">Emergency Contact Number</label>
+				<input type="tel" class="form-control" id="emergencyContactNumber" placeholder="Enter emergency contact number" name="emergencyContactNumber" required>
+			</div>
+		</div>
+
+		<div class="row">
+			<!-- Rental Agreement Signed -->
+			<div class="col-md-6 mb-3">
+				<label for="rentalAgreement" class="form-label">Rental Agreement Signed</label>
+				<select class="form-select" id="rentalAgreement" name="rentalAgreement" required>
+					<option value="" disabled selected>Have you signed a rental agreement?</option>
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</select>
+			</div>
+
+			<!-- Additional Comments -->
+			<div class="col-md-6 mb-3">
+				<label for="additionalComments" class="form-label">Additional Comments</label>
+				<textarea class="form-control" id="additionalComments" name="additionalComments" rows="3" placeholder="Any other information for the property owner"></textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 text-center">
+                            <button type="submit" class="btn btn-primary" <a href="QRpayment"></a> >Submit Information</button>
+			</div>
+	</form>
+
+	<!-- Bootstrap JS and dependencies -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

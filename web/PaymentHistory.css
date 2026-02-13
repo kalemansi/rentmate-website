@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/* Payment History Section */
+.payment-history-container {
+	margin-top: 30px;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.payment-history-container h3 {
+	font-size: 1.8rem;
+	margin-bottom: 15px;
+	color: #333;
+}
+
+.payment-history-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 15px;
+}
+
+.payment-history-table th,
+.payment-history-table td {
+	padding: 12px 15px;
+	text-align: left;
+	font-size: 1rem;
+	border-bottom: 1px solid #ddd;
+}
+
+.payment-history-table th {
+	background-color: #f4f4f4;
+	color: #333;
+}
+
+.payment-history-table tr:hover {
+	background-color: #f9f9f9;
+}
+
+.status-paid {
+	color: #28a745;
+	font-weight: bold;
+}
+
+.status-overdue {
+	color: #dc3545;
+	font-weight: bold;
+}
+
+.btn-view-details {
+	padding: 8px 15px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1rem;
+	transition: background-color 0.3s;
+}
+
+.btn-view-details:hover {
+	background-color: #0056b3;
+}
+
